@@ -49,8 +49,9 @@ for c in data["Gabarito"]:
 
 data["Tipo"] = questoes
 
-for c in range(100):
-    respostas.append(input(f"Questão {c+1}: ").upper()[0])
+with open("respostas.txt", "r") as f:
+    for c in f.read().split("\n"):
+        respostas.append(c)
 
 #! corrigindo
 data["Resposta"] = respostas
